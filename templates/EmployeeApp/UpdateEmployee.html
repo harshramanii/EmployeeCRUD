@@ -1,0 +1,35 @@
+{% load static %}
+
+<htmml>
+    <body>
+        <table border="1" align="center">
+            <title>Update Employee</title>
+            <h1>Update Employee</h1>
+
+            {%for e in as%}
+            <form action="../UpdateEmployeeRecord/{{e.id}}" method="get">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" placeholder="Name" value="{{e.name}}"/></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="email" placeholder="Email" value="{{e.email}}"/></td>
+                </tr>
+                <tr>
+                    <td>State:</td>
+                    <td><input type="text" name="state" placeholder="State" value="{{e.state}}" /></td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td><input type="text" name="department" placeholder="Department"value="{{e.department}}" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Update" /></td>
+                </tr>
+            </form>
+            {% endfor %}
+        </table>
+    </body>
+</htmml>
