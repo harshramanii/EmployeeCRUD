@@ -1,10 +1,10 @@
-{% load static%}
+<!-- {% load static%}
 
 <html>
     <body>
         <title>Employee List</title>
         <h1>Employee List</h1>
-        <table border="1" align="center">
+        <table border="1" >
             {%for s in as%}
             <tr>
                 <td>{{s.id}}</td>
@@ -20,4 +20,75 @@
         <br>
         <a href="../AddEmployee">Add Employee</a>
     </body>
-</html>
+</html> -->
+
+{% load static%}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Table 01</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="{% static 'CSS/DisplayData.css'%}" rel="stylesheet" type="text/css" media="all" />
+
+
+</head>
+
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Employee</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="../AddEmployee">Add Employee</a>
+                    <div class="table-wrap">
+                        <table class="table">
+                            <thead class="thead-primary">
+                                <tr>
+                                    <th>id</th>
+                                    <th>First Name</th>
+                                    <th>Email</th>
+                                    <th>State</th>
+                                    <th>Department</th>
+                                    <th>Update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {%for e in as%}
+                                <tr>
+                                    <th scope="row">{{e.id}}</th>
+                                    <td>{{e.name}}</td>
+                                    <td>{{e.email}}</td>
+                                    <td>{{e.state}}</td>
+                                    <td>{{e.department}}</td>
+                                    <td><a href="../UpdateEmployee/{{e.id}}">Update</a></td>
+                                    <td><a href="../DeleteEmployeeRecord/{{e.id}}">Delete</a></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>`

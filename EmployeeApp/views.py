@@ -15,6 +15,10 @@ def AddEmployee(request):
     return render(request, 'EmployeeApp/AddEmployee.html')
 
 
+def SignUp(request):
+    return render(request, 'EmployeeApp/SignUp.html')
+
+
 def UpdateEmployee(request, sid):
     allEmployee = Employee.objects.all()
     allEmployee = Employee.objects.filter(id=sid)

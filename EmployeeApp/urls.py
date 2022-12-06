@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('DisplayEmployee/', views.DisplayEmployeeData,
          name='DisplayEmployeeData'),
+    path('SignUp/', views.SignUp, name='SignUp'),
     path('AddEmployee/', views.AddEmployee, name='AddEmployeeData'),
     path('UpdateEmployee/<int:sid>', views.UpdateEmployee, name='UpdateEmployee'),
     path('InsertEmployeeRecord/', views.InsertEmployeeRecord,
